@@ -1,127 +1,70 @@
-import Link from "next/link";
 import Navbar from "@containers/Navbar";
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSwitcher from "../../ThemeSwitcher";
+import SocialIcons from "@components/SocialIcons";
+import Logo from "@components/Logo";
+import Hamburger from "../Hamburger";
+import { useState } from "react";
 
 export default function index() {
+  const [showNav, setShowNav] = useState(false);
   return (
     <>
-      <header className="bg-[rgba(255,255,255,.3)] dark:bg-[rgba(28,22,47,.3)] p-4 rounded-xl flex flex-row webkit-box-pack-justify justify-between">
+      <header className="bg-[rgba(255,255,255,.3)] dark:bg-[rgba(28,22,47,.3)] p-4 rounded-xl flex flex-row webkit-box-pack-justify justify-between ">
         <div className="flex items-center webkit-box-align-center">
           <div className="p-0 font-bold">
-            <Link className="leading-[0]" href="/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="70"
-                height="20"
-                fill="currentColor"
-                fillRule="evenodd"
-                clipRule="evenodd"
-                className="handle"
-                viewBox="0 0 70 20"
-              >
-                <path
-                  d="M38.507 0L38.5056 16H35.2955L35.2969 0H38.507ZM10.8083 11.2895H19.36C19.428 10.904 19.4734 10.5186 19.4734 10.0877C19.4734 6.75453 17.0916 4.10156 13.7345 4.10156C10.1732 4.10156 7.74609 6.70918 7.74609 10.0877C7.74609 13.4663 10.1505 16.0739 13.9613 16.0739C16.1389 16.0739 17.8402 15.1896 18.9063 13.6477L16.5472 12.2872C16.0482 12.9448 15.1409 13.4209 14.0067 13.4209C12.4642 13.4209 11.2166 12.786 10.8083 11.2895ZM10.763 9.02201C11.1032 7.57082 12.1693 6.73185 13.7345 6.73185C14.9594 6.73185 16.1843 7.38942 16.5472 9.02201H10.763ZM0.422379 5.5658C0.760283 4.97469 1.54168 4.63692 2.72435 4.63692H6.568V7.23358H3.21008V16.0002H0V7.36025C0 6.62136 0.0844758 6.15692 0.422379 5.5658ZM53.5975 17.4874H50.6914V19.9996H54.0832C55.7094 19.9152 56.4063 19.3874 56.6175 18.5852C56.8076 17.9941 56.8076 17.783 56.8076 17.2763L56.8076 4.39111H53.5975L53.5975 17.4874ZM47.5 16H43.5085L39.6797 4.3418H43.1432L44.4315 9.04958L45.424 12.8707H45.5508L46.5434 9.07069L47.8316 4.3418H51.3162L47.5 16ZM29.6662 4.53461V5.84517C28.8662 4.84559 27.6663 4.22363 26.0441 4.22363C23.0887 4.22363 20.6444 6.77811 20.6444 10.0878C20.6444 13.3975 23.0887 15.952 26.0441 15.952C27.6663 15.952 28.8662 15.3301 29.6662 14.3305V15.641H32.5327V4.53461H29.6662ZM26.5774 13.2198C24.822 13.2198 23.5109 11.9537 23.5109 10.0878C23.5109 8.22195 24.822 6.95582 26.5774 6.95582C28.3551 6.95582 29.6662 8.22195 29.6662 10.0878C29.6662 11.9537 28.3551 13.2198 26.5774 13.2198ZM60.2641 17.4621V19.9994H67.4633C68.2325 19.9994 68.8478 19.761 69.3093 19.2843C69.7708 18.823 70.0015 18.2002 70.0015 17.416V4.41797H67.0941V9.58558C67.0941 10.6466 66.848 11.477 66.3557 12.0767C65.8635 12.661 65.1713 12.9532 64.279 12.9532C63.4945 12.9532 62.8869 12.7379 62.4562 12.3073C62.0408 11.8768 61.8332 11.2309 61.8332 10.3698V4.41797H58.9258V10.6005C58.9258 11.5385 59.1104 12.3689 59.4796 13.0916C59.8488 13.8143 60.3641 14.3833 61.0256 14.7985C61.7024 15.1983 62.4869 15.3982 63.3791 15.3982C64.0714 15.3982 64.6405 15.3136 65.0867 15.1444C65.5328 14.9753 65.8866 14.76 66.1481 14.4986C66.4096 14.2372 66.6019 13.9758 66.7249 13.7144H67.1403V16.7702C67.1403 17.2315 66.9249 17.4621 66.4942 17.4621H60.2641Z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  d="M0 17.4883V20.0005H48.817V17.4883H0Z"
-                  fill="url(#paint0_linear_1845_11940)"
-                ></path>
-                <path
-                  d="M56.8077 3.14556H53.5977V0H56.8077V3.14556Z"
-                  fill="url(#paint1_linear_1845_11940)"
-                ></path>
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_1845_11940"
-                    x1="-1.4851"
-                    y1="17.089"
-                    x2="49"
-                    y2="20"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#309AFC"></stop>
-                    <stop offset="0.333333" stopColor="#5754FF"></stop>
-                    <stop offset="0.666667" stopColor="#FF51A4"></stop>
-                    <stop offset="1" stopColor="#FF7C51"></stop>
-                  </linearGradient>
-                  <linearGradient
-                    id="paint1_linear_1845_11940"
-                    x1="53.5"
-                    y1="3"
-                    x2="56.5"
-                    y2="6.48752e-08"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#0038FF"></stop>
-                    <stop offset="0.5" stopColor="#5754FF"></stop>
-                    <stop offset="1" stopColor="#FF51A4"></stop>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </Link>
+            <Logo />
           </div>
-          <div className="ml-2 relative max-md:hidden">
-            <Navbar />
+          <div className="ml-2 relative">
+            <Navbar
+              className={`${
+                showNav ? "max-md:right-0" : "max-md:right-[-388px]"
+              }`}
+            />
           </div>
         </div>
         <div className="flex items-center webkit-box-align-center">
           <div className="flex items-center webkit-box-align-center mr-3 border-r-[1px] border-r-[rgba(48,52,77,.1)] dark:border-r-[rgba(255,255,255,.1)]">
-            <Link className="mx-3 my-0.5" href="https://instagram.com">
-              <svg
-                width="16"
-                height="16"
-                fill="currentColor"
-                fillRule="evenodd"
-                clipRule="evenodd"
-                viewBox="0 0 300 300"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66"></path>
-              </svg>
-            </Link>
-            <Link className="mx-3 my-0.5" href="https://instagram.com">
-              <svg
-                width="16"
-                height="16"
-                fill="currentColor"
-                fillRule="evenodd"
-                clipRule="evenodd"
-                className="insta-icon"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 0C15.264 0 15.672 1.49012e-08 16.944 0.072C18.216 0.12 19.104 0.336 19.872 0.624C20.64 0.936 21.312 1.344 21.984 2.016C22.656 2.664 23.064 3.336 23.376 4.128C23.664 4.896 23.88 5.76 23.928 7.056C23.976 8.328 24 8.736 24 12C24 15.264 23.976 15.672 23.928 16.944C23.88 18.216 23.664 19.08 23.376 19.848C23.064 20.64 22.656 21.312 21.984 21.984C21.312 22.656 20.64 23.064 19.872 23.376C19.104 23.664 18.216 23.856 16.944 23.928C15.672 23.976 15.264 24 12 24C8.736 24 8.328 23.976 7.056 23.928C5.784 23.856 4.896 23.664 4.152 23.376C3.36 23.064 2.688 22.656 2.016 21.984C1.344 21.312 0.936 20.64 0.624 19.848C0.336 19.08 0.144 18.216 0.072 16.944C0.024 15.672 0 15.264 0 12C0 8.736 0.024 8.328 0.072 7.056C0.12 5.76 0.336 4.896 0.624 4.128C0.936 3.336 1.344 2.664 2.016 2.016C2.688 1.344 3.36 0.936 4.152 0.624C4.896 0.336 5.784 0.12 7.056 0.072C8.328 1.49012e-08 8.736 0 12 0ZM10.92 2.16C8.688 2.16 8.256 2.16 7.152 2.232C5.976 2.28 5.352 2.472 4.92 2.64C4.368 2.856 3.96 3.12 3.552 3.528C3.144 3.936 2.856 4.344 2.64 4.92C2.472 5.328 2.28 5.976 2.232 7.152C2.184 8.4 2.16 8.784 2.16 12C2.16 15.192 2.184 15.576 2.232 16.848C2.28 18 2.472 18.648 2.64 19.056C2.856 19.632 3.12 20.016 3.552 20.448C3.984 20.88 4.368 21.12 4.92 21.336C5.352 21.504 5.976 21.696 7.152 21.768C8.424 21.816 8.808 21.84 12 21.84C15.216 21.84 15.576 21.816 16.848 21.768C18.024 21.696 18.648 21.504 19.08 21.336C19.632 21.12 20.04 20.856 20.448 20.448C20.88 20.04 21.144 19.632 21.36 19.056C21.528 18.648 21.72 18 21.768 16.848C21.816 15.576 21.84 15.192 21.84 12C21.84 8.784 21.816 8.4 21.768 7.152C21.72 5.976 21.528 5.328 21.36 4.92C21.144 4.368 20.88 3.96 20.448 3.528C20.04 3.12 19.632 2.856 19.08 2.64C18.648 2.472 18.024 2.28 16.848 2.232C15.576 2.16 15.216 2.16 12 2.16C11.592 2.16 11.256 2.16 10.92 2.16ZM18.408 4.152C19.2 4.152 19.848 4.8 19.848 5.592C19.848 6.384 19.2 7.032 18.408 7.032C17.616 7.032 16.968 6.384 16.968 5.592C16.968 4.8 17.616 4.152 18.408 4.152ZM12 5.832C15.408 5.832 18.168 8.592 18.168 12C18.168 15.408 15.408 18.168 12 18.168C8.592 18.168 5.832 15.408 5.832 12C5.832 8.592 8.592 5.832 12 5.832ZM12 7.992C9.792 7.992 7.992 9.792 7.992 12C7.992 14.208 9.792 15.984 12 15.984C14.208 15.984 16.008 14.208 16.008 12C16.008 9.792 14.208 7.992 12 7.992Z"></path>
-              </svg>
-            </Link>
-            <Link className="mx-3 my-0.5" href="https://instagram.com">
-              <svg
-                width="16"
-                height="16"
-                fill="currentColor"
-                fillRule="evenodd"
-                clipRule="evenodd"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                strokeWidth="1.3"
-                id="facebook"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeMiterlimit="10"
-                  d="M12.5 6h-3V4a1 1 0 0 1 1-1h1V.5h-2a3 3 0 0 0-3 3V6h-2v2.5h2v7h3v-7h2l1-2.5z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-            </Link>
+            <SocialIcons />
           </div>
-          <div className="flex webkit-box-align-center items-center">
+          <div className="flex webkit-box-align-center items-center z-0">
             <ThemeSwitcher />
           </div>
+          <Hamburger onClick={() => setShowNav(!showNav)}>
+            {!showNav ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h7"
+                />
+              </svg>
+            ) : (
+              <svg
+                width="20"
+                height="20"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            )}
+          </Hamburger>
         </div>
       </header>
     </>

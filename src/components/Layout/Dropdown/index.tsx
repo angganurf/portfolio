@@ -20,7 +20,7 @@ export default function index() {
     <>
       <Menu as="div">
         <Menu.Button
-          className="flex border-none cursor-pointer w-full font-medium leading-5 px-2.5 py-0 text-base webkit-box-align-center items-center tracking-[.25px] bg-none"
+          className="flex border-none cursor-pointer w-full font-medium leading-5 px-2.5 py-0 text-base webkit-box-align-center items-center tracking-[.25px] bg-none max-md:text-lg max-md:my-1"
           type="button"
           aria-haspopup="menu"
           aria-expanded="true"
@@ -51,7 +51,7 @@ export default function index() {
           <Menu.Items
             className={`flex absolute right-0 left-auto text-[0.875rem] z-[9999] w-[8rem] list-none rounded-[0.5rem] flex-col gap-y-3 mt-4 bg-slate-50 shadow-sm py-3 transition-all overflow-hidden`}
           >
-            {page.slice(5, 6).map((item) => (
+            {page.slice(5, 10).map((item) => (
               <Menu.Item key={item.id}>
                 {({ active }) => (
                   <Link
@@ -59,7 +59,7 @@ export default function index() {
                       active
                         ? "bg-slate-50 text-black cursor-pointer"
                         : "opacity-70"
-                    } items-left  px-4 dark:text-black `}
+                    } items-left  px-4 dark:text-black max-md:text-lg max-md:my-1`}
                     href={item.slug}
                   >
                     {item.name}

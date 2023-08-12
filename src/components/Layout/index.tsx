@@ -16,10 +16,12 @@ export default function Layout({ children }: IProps) {
         before:bg-[url(/assets/img/header-gradient.svg),_url(/assets/img/footer-gradient.svg)] before:bg-[length:1400px] before:bg-no-repeat before:bg-position-xy`}
       >
         <div className="pt-6 w-full relative z-[1]">
-          <div className="relative webkit1">
-            <Header />
-            {children}
-            <Footer />
+          <div className="relative webkit1 md:w-[708px] w-full max-md:px-2">
+            <div className="max-md:mx-3">
+              <Header />
+              {children}
+              <Footer />
+            </div>
           </div>
         </div>
       </main>
