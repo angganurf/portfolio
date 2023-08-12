@@ -60,7 +60,7 @@ export default function index() {
                         ? "bg-slate-50 text-black cursor-pointer"
                         : "opacity-70"
                     } items-left  px-4 dark:text-black `}
-                    href="#"
+                    href={item.slug}
                   >
                     {item.name}
                   </Link>
