@@ -9,7 +9,7 @@ export default function index() {
   const [showNav, setShowNav] = useState(false);
   return (
     <>
-      <header className="bg-[rgba(255,255,255,.3)] dark:bg-[rgba(28,22,47,.3)] p-4 rounded-xl flex flex-row webkit-box-pack-justify justify-between ">
+      <header className="bg-[rgba(255,255,255,.3)] dark:bg-[rgba(28,22,47,.3)] p-4 rounded-xl flex flex-row webkit-box-pack-justify justify-between max-md:mx-3 ">
         <div className="flex items-center webkit-box-align-center">
           <div className="p-0 font-bold">
             <Logo />

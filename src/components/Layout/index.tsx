@@ -17,7 +17,7 @@ export default function Layout({ children }: IProps) {
       >
         <div className="pt-6 w-full relative z-[1]">
           <div className="relative webkit1 md:w-[708px] w-full max-md:px-2">
-            <div className="max-md:mx-3">
+            <div className="">
               <Header />
               {children}
               <Footer />
