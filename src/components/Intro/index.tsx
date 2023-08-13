@@ -9,10 +9,10 @@ export default function Intro() {
         design and illustrations. I spent most of my time designing for brands
         and making design resources and tools.
       </p>
-      <h4 className="font-medium text-lg text-[rgba(74,87,111,.6)] tracking-tight mt-5">
-        Building what I love at{" "}
+      <h4 className="font-medium text-lg text-[rgba(74,87,111,.6)] dark:text-[rgba(114,120,136,.6)] tracking-[-0.2px] max-md:text-base">
+        Building what I love at
         <Link
-          href=""
+          href="#"
           className="font-semibold bg-clip-text"
           style={{
             backgroundSize: "100%",
@@ -23,6 +23,7 @@ export default function Intro() {
               "linear-gradient(90.42deg,#4AB1F1 0.58%,#566CEC 37.22%,#D749AF 73.87%,#FF7C51 112.26%)",
           }}
         >
+          {" "}
           @fsstudio
         </Link>
       </h4>

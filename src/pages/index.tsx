@@ -1,4 +1,5 @@
 import Avatar from "@components/Avatar";
+import Companies from "@components/Companies";
 import Intro from "@components/Intro";
 import NameCard from "@components/NameCard";
 
@@ -14,6 +15,7 @@ export default function Home() {
             </div>
           </div>
           <Intro />
+          <Companies />
         </div>
       </div>
     </>

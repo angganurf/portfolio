@@ -45,10 +45,18 @@ export const Navbar = ({ className }: IProps) => {
         <li key={item.id}>
           {item.highlight == "Yes" ? (
             <Link
-              className="font-bold ml-2 block leading-5 px-2.5 py-0 text-base tracking-[-0.25px] text-[#a64af1]
+              className="font-bold ml-2 block leading-5 px-2.5 py-0 text-base tracking-[-0.25px] bg-clip-text
               max-md:text-lg
               max-md:my-1
               "
+              style={{
+                backgroundSize: "100%",
+                WebkitTextFillColor: "transparent",
+                backgroundRepeat: "repeat",
+                backgroundColor: "#566CEC",
+                backgroundImage:
+                  "linear-gradient(90.42deg,#4AB1F1 0.58%,#566CEC 37.22%,#D749AF 73.87%,#FF7C51 112.26%)",
+              }}
               href={item.slug}
             >
               {item.name}
