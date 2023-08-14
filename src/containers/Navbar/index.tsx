@@ -39,6 +39,8 @@ export const Navbar = ({ className }: IProps) => {
                 max-md:h-[100vh]
                 max-md:overflow-hidden
                 max-md:gap-2
+                max-md:z-10
+                scroll-smooth
     `}
     >
       {page.slice(0, 5).map((item) => (

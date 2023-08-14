@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 13, 2023 at 04:58 PM
+-- Generation Time: Aug 14, 2023 at 05:51 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -20,6 +20,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `portfolio`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `companies`
+--
+
+CREATE TABLE `companies` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `companies`
+--
+
+INSERT INTO `companies` (`id`, `name`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'Figma', 'figma.png', '2023-08-14 15:47:32', '2023-08-14 15:47:32'),
+(2, 'Product Hunt', 'producthunt.png', '2023-08-14 15:47:32', '0000-00-00 00:00:00'),
+(3, 'Gaga', 'gaga.png', '2023-08-14 15:48:16', '2023-08-14 15:48:16'),
+(4, 'Abdz', 'abdz.png', '2023-08-14 15:48:16', '2023-08-14 15:48:16'),
+(5, 'Dribble', 'dribble.png', '2023-08-14 15:48:58', '2023-08-14 15:48:58'),
+(6, 'Adobe', 'adobe.png', '2023-08-14 15:48:58', '2023-08-14 15:48:58'),
+(7, 'Lapa', 'lapa.png', '2023-08-14 15:49:23', '2023-08-14 15:49:23'),
+(8, 'One Page Love', 'one-page-love.png', '2023-08-14 15:49:36', '2023-08-14 15:49:36');
 
 -- --------------------------------------------------------
 
@@ -58,7 +86,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (22, '2014_10_12_100000_create_password_reset_tokens_table', 1),
 (23, '2019_08_19_000000_create_failed_jobs_table', 1),
 (24, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(25, '2023_08_09_135739_create_pages_table', 1);
+(25, '2023_08_09_135739_create_pages_table', 1),
+(26, '2023_08_14_024740_create_works_table', 2),
+(27, '2023_08_14_154424_create_companies_table', 2);
 
 -- --------------------------------------------------------
 
@@ -145,9 +175,47 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `works`
+--
+
+CREATE TABLE `works` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `featured` enum('Yes','No') NOT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `creation_year` varchar(255) DEFAULT NULL,
+  `thumbnail` varchar(255) NOT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `works`
+--
+
+INSERT INTO `works` (`id`, `title`, `description`, `featured`, `status`, `creation_year`, `thumbnail`, `url`, `created_at`, `updated_at`) VALUES
+(1, '3dicons', 'Beautifully Crafted Open-source 3dicons library', 'Yes', 'UPDATE', '2021-Now', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F3dicons.01da1ba0.png&w=640&q=75', 'https://3dicons.co/?ref=vjyme', '2023-08-14 02:57:52', '2023-08-14 02:57:52'),
+(2, 'Ghost Hand Kit', 'Hand Gestures for AR/VR design experience', 'Yes', 'WIP', '2023', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fghost-hand-kit.23d9faea.png&w=640&q=75', 'https://vjy.me/hand', '2023-08-14 02:57:52', '2023-08-14 02:57:52'),
+(3, 'Noisy Gradients', 'A figma plugin to generate cool grainy gradients', 'Yes', NULL, '2023', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnoisy-gradients.f142b4f6.png&w=640&q=75', 'https://tools.metavatar.app/figma', '2023-08-14 03:01:46', '2023-08-14 03:01:46'),
+(4, 'V5 UI Kit', 'Open-source Figma UI Kit made for this website', 'Yes', NULL, '2023', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fv5.fea9827a.png&w=640&q=75', 'https://vjy.me/v5', '2023-08-14 03:01:46', '2023-08-14 03:01:46'),
+(5, 'Cool Shapes', 'Cool abstract shapes for visual design', 'Yes', 'WIP', '2023', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fshapes.95801ae7.png&w=640&q=75', 'https://vjy.me/shapes', '2023-08-14 03:01:46', '2023-08-14 03:01:46'),
+(6, 'Project Dots', 'A figma plugin for illustaions. More info soon', 'Yes', 'WIP', 'coming soon', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdots.34380c76.png&w=640&q=75', 'https://twitter.com/realvjy/status/1628367876238475267', '2023-08-14 03:01:46', '2023-08-14 03:01:46'),
+(7, 'nxtlnk', 'Custom bio link template for nextjs, like - linktree, bio', 'No', NULL, '2022', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnxtlnk.1eccaed1.png&w=640&q=75', 'https://nxtlnk.xyz/?ref=vjyme', '2023-08-14 03:04:31', '2023-08-14 03:04:31');
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `companies`
+--
+ALTER TABLE `companies`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -190,8 +258,20 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
+-- Indexes for table `works`
+--
+ALTER TABLE `works`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `companies`
+--
+ALTER TABLE `companies`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -203,7 +283,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `pages`
@@ -222,6 +302,12 @@ ALTER TABLE `personal_access_tokens`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `works`
+--
+ALTER TABLE `works`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

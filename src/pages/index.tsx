@@ -1,5 +1,6 @@
 import Avatar from "@components/Avatar";
 import Companies from "@components/Companies";
+import CompaniesBottom from "@components/Companies/CompaniesBottom";
 import Contact from "@components/Contact";
 import CurrenProjects from "@components/CurrentProjects";
 import Intro from "@components/Intro";
@@ -22,6 +23,7 @@ export default function Home() {
       </div>
       <CurrenProjects />
       <Contact />
+      <CompaniesBottom />
     </>
   );
 }

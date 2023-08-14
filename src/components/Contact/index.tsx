@@ -15,9 +15,9 @@ export default function Contact() {
   const currentTheme = theme === "system" ? systemTheme : theme;
   return (
     <div
-      className={`p-4 ${
+      className={`p-3 ${
         currentTheme === "light" ? "hover-bg" : "hover-bg-dark"
-      } flex rounded-3xl mt-[60px] mx-1 mb-1 
+      } flex rounded-3xl mt-[60px] mx-4 mb-1 
     webkit-box-align-center items-center`}
     >
       <div className="p-8 z-[2]">

@@ -7,6 +7,15 @@ import { useState } from "react";
 
 export default function index() {
   const [showNav, setShowNav] = useState(false);
+
+  const handleButton = () => {
+    setShowNav(!showNav);
+    if (!showNav === true) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  };
   return (
     <>
       <header className="bg-[rgba(255,255,255,.3)] dark:bg-[rgba(28,22,47,.3)] p-4 rounded-xl flex flex-row webkit-box-pack-justify justify-between max-md:mx-3 ">
@@ -29,7 +38,7 @@ export default function index() {
           <div className="flex webkit-box-align-center items-center z-0">
             <ThemeSwitcher />
           </div>
-          <Hamburger onClick={() => setShowNav(!showNav)}>
+          <Hamburger onClick={() => handleButton()}>
             {!showNav ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -57,9 +66,9 @@ export default function index() {
                 aria-hidden="true"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>

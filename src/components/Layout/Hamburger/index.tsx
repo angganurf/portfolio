@@ -7,7 +7,7 @@ type IProps = {
 export default function Hamburger({ onClick, children }: IProps) {
   return (
     <div
-      className="space-y-1 p-0 flex md:hidden ml-[12px] cursor-pointer z-0"
+      className="space-y-1 p-0 flex md:hidden ml-[12px] cursor-pointer z-20"
       onClick={onClick}
     >
       {children}

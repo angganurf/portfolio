@@ -7,7 +7,7 @@ export default function Companies() {
     <div className="relative">
       <Link className="companies block" href="/about">
         <h3
-          className="absolute m-0 text-base font-semibold z-[1] left-[50%]  transition-all tracking-[-0.5px] opacity-0 leading-[120%] items-center bg-clip-text gradient-sky-2"
+          className="gradient-sky-2"
           style={{
             top: "calc(50% - 15px)",
             transform: "translate(-50%, 5px) scale(0.95)",

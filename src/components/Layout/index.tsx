@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Inter } from "next/font/google";
+import Texture from "./Texture";
 
 type IProps = {
   children: ReactNode;
@@ -17,13 +18,12 @@ export default function Layout({ children }: IProps) {
       >
         <div className="pt-6 w-full relative z-[1]">
           <div className="relative webkit1 md:w-[708px] w-full max-md:px-2">
-            <div className="">
-              <Header />
-              {children}
-              <Footer />
-            </div>
+            <Header />
+            {children}
+            <Footer />
           </div>
         </div>
+        <Texture />
       </main>
     </>
   );

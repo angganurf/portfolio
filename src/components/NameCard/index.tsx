@@ -22,6 +22,7 @@ export default function NameCard() {
             width={180}
             height={180}
             alt="angga nurfaisal"
+            className="w-[70.5%]"
           />
         ) : (
           <Image
@@ -29,6 +30,7 @@ export default function NameCard() {
             width={180}
             height={180}
             alt="angga nurfaisal"
+            className="w-[70.5%]"
           />
         )}
       </h1>

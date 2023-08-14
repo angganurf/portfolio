@@ -150,6 +150,11 @@ body {
   opacity: 0.4;
   filter: blur(3px);
 }
+.companies:hover ul.comBottom {
+  transform: scale(0.95);
+  opacity: 0.2;
+  filter: blur(10px);
+}
 .workcardDark::before {
   content: "";
   border-radius: 16px;
@@ -192,6 +197,45 @@ body {
   transform: scale(1);
 }
 
+.companies h3 {
+  position: absolute;
+  margin: 0px;
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 1;
+  left: 50%;
+  top: 45%;
+  letter-spacing: -0.5px;
+  transform: translate(-50%, 5px) scale(0.95);
+  opacity: 0;
+  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  line-height: 120%;
+  text-align: center;
+}
+.companies ul.comBottom {
+  display: flex;
+  max-width: 600px;
+  margin: 0px auto;
+  opacity: 0.3;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1) 0s;
+}
+
+.gradient-nft {
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: repeat;
+  background-color: rgb(107, 187, 166);
+  background-image: linear-gradient(90deg, #566cec, #d749af 50%, #ff7c51);
+}
+
+.left {
+  transform: scale(-1, 1);
+  opacity: 0.4;
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0%);
@@ -206,5 +250,13 @@ body {
   .workcardDark::before,
   .workcard::before {
     border-radius: 14px;
+  }
+  .companies ul.comBottom {
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 }
