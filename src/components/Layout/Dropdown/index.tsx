@@ -20,7 +20,7 @@ export default function index() {
     <>
       <Menu as="div">
         <Menu.Button
-          className="flex border-none cursor-pointer w-full font-medium leading-5 px-2.5 py-0 text-base webkit-box-align-center items-center tracking-[.25px] bg-none max-md:text-lg max-md:my-1"
+          className="flex border-none cursor-pointer w-full font-medium leading-5 px-2.5 py-0 text-base webkit-box-align-center items-center tracking-[.25px] bg-none max-md:text-lg max-md:my-1 "
           type="button"
           aria-haspopup="menu"
           aria-expanded="true"
