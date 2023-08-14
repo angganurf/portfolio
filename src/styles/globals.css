@@ -52,6 +52,26 @@ body {
   background-size: 1000% 1000%;
   animation: 30s ease 0s infinite normal none running scroll;
 }
+.gradient-retro-2 {
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: repeat;
+  background-image: linear-gradient(
+    90.42deg,
+    #4ab1f1 0.58%,
+    #566cec 37.22%,
+    #d749af 73.87%,
+    #ff7c51 112.26%
+  );
+}
+.gradient-sky-2 {
+  background-size: 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: repeat;
+  background-image: linear-gradient(90deg, #1584eb 0%, #24d6d9 97.34%);
+}
 .marquee-container {
   overflow-x: hidden !important;
   display: flex !important;
@@ -97,6 +117,47 @@ body {
   opacity: 0.4;
   filter: blur(3px);
 }
+.workcardDark::before {
+  content: "";
+  border-radius: 16px;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  inset: -2px;
+  opacity: 0;
+  transform: scale(0.8);
+}
+.workcardDark:hover::before {
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(30, 28, 50, 0.8) 0%,
+    rgba(43, 22, 29, 0.7) 100%
+  );
+  transition: all 333ms ease 0s;
+  transform: scale(1);
+}
+
+.workcard::before {
+  content: "";
+  border-radius: 16px;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  inset: -2px;
+  opacity: 0;
+  transform: scale(0.8);
+}
+.workcard:hover::before {
+  opacity: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 233, 244, 0.4) 0%,
+    rgba(234, 243, 255, 0.7) 100%
+  );
+  transition: all 333ms ease 0s;
+  transform: scale(1);
+}
 
 @keyframes scroll {
   0% {
@@ -105,5 +166,12 @@ body {
 
   100% {
     transform: translateX(-100%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .workcardDark::before,
+  .workcard::before {
+    border-radius: 14px;
   }
 }

@@ -19,14 +19,14 @@ export default function Logo() {
         <Image
           src="/angganurf.png"
           width={100}
-          height={100}
+          height={0}
           alt="angga nurfaisal"
         />
       ) : (
         <Image
           src="/angganurf-white.png"
           width={100}
-          height={100}
+          height={0}
           alt="angga nurfaisal"
         />
       )}

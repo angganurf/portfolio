@@ -1,5 +1,7 @@
 import Avatar from "@components/Avatar";
 import Companies from "@components/Companies";
+import Contact from "@components/Contact";
+import CurrenProjects from "@components/CurrentProjects";
 import Intro from "@components/Intro";
 import NameCard from "@components/NameCard";
 
@@ -18,6 +20,8 @@ export default function Home() {
           <Companies />
         </div>
       </div>
+      <CurrenProjects />
+      <Contact />
     </>
   );
 }

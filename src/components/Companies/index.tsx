@@ -7,15 +7,11 @@ export default function Companies() {
     <div className="relative">
       <Link className="companies block" href="/about">
         <h3
-          className="absolute m-0 text-base font-semibold z-[1] left-[50%]  transition-all tracking-[-0.5px] opacity-0 leading-[120%] items-center bg-clip-text"
+          className="absolute m-0 text-base font-semibold z-[1] left-[50%]  transition-all tracking-[-0.5px] opacity-0 leading-[120%] items-center bg-clip-text gradient-sky-2"
           style={{
             top: "calc(50% - 15px)",
             transform: "translate(-50%, 5px) scale(0.95)",
-            backgroundSize: "100%",
-            WebkitTextFillColor: "transparent",
-            backgroundRepeat: "repeat",
             backgroundColor: "#566CEC",
-            backgroundImage: "linear-gradient(90deg,#1584EB 0%,#24D6D9 97.34%)",
           }}
         >
           Featured by
