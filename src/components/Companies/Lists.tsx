@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Companies from "@containers/Companies";
 
 export default function Lists() {
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { systemTheme, theme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {

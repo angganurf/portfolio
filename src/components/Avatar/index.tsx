@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function Avatar() {
   return (
@@ -44,8 +45,11 @@ export default function Avatar() {
               transform: "translate(-50%, -50%)",
             }}
           ></div>
-          <img
+          <Image
             src="/assets/img/avatar.png"
+            width={100}
+            height={100}
+            alt={`${process.env.NEXT_PUBLIC_NAME}`}
             className="absolute bg-white dark:bg-black"
             style={{
               clipPath: "url(#hex)",
@@ -55,7 +59,7 @@ export default function Avatar() {
               width: "calc(100% - 6px)",
               height: "calc(100% -6px)",
             }}
-          ></img>
+          />
         </div>
       </div>
     </>

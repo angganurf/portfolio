@@ -5,7 +5,7 @@ import Logo from "@components/Logo";
 import Hamburger from "../Hamburger";
 import { useState } from "react";
 
-export default function index() {
+export default function Header() {
   const [showNav, setShowNav] = useState(false);
 
   const handleButton = () => {

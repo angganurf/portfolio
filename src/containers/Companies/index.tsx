@@ -2,6 +2,7 @@ import { Companies } from "@interfaces/companies";
 import { getCompanie } from "@services/companies";
 import React, { useState } from "react";
 import useAsyncEffect from "use-async-effect";
+import Image from "next/image";
 
 type IProps = {
   currentThemes: string;
@@ -22,8 +23,10 @@ export default function Companies({ currentThemes }: IProps) {
   return (
     <>
       {companies.map((item) => (
-        <li>
-          <img
+        <li key={item.id}>
+          <Image
+            width={100}
+            height={100}
             src={`/assets/img/companies/${item.image}`}
             alt={item.name}
             className={`${currentThemes === "light" ? "invert-0" : "invert"}`}

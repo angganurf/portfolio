@@ -40,7 +40,10 @@ export const AllWorks = () => {
               <div className="w-full relative rounded-xl max-md:!w-24">
                 <span className="rounded-xl max-md:!w-24">
                   <span className="rounded-xl max-md:!w-24">
-                    <img
+                    <Image
+                      width={200}
+                      height={200}
+                      alt="Gradient BG"
                       src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27400%27%20height=%27400%27/%3e"
                       className="rounded-xl"
                     />

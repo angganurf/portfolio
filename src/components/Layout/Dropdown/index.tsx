@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Fragment, useEffect, useRef, useState } from "react";
 import useAsyncEffect from "use-async-effect";
 
-export default function index() {
+export default function Dropdown() {
   const [page, setIsPage] = useState<Pages[]>([]);
 
   const fetchPages = async () => {
