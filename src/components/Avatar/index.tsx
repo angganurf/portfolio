@@ -45,7 +45,7 @@ export default function Avatar() {
             }}
           ></div>
           <img
-            src="https://vjy.me/avatar.png"
+            src="/assets/img/avatar.png"
             className="absolute bg-white dark:bg-black"
             style={{
               clipPath: "url(#hex)",

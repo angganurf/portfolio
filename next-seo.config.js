@@ -2,7 +2,7 @@ export default {
   openGraph: {
     type: "website",
     locale: "en_IE",
-    title: "Angga nurf Portfolio",
+    title: "angganurf ✦ fullstack web developer, designer",
     url: "https://angganurf.com",
     description:
       "I am a fullstack web developer, currently looking into learning new things (Rust, Go, Web3 and backend technologies). Whenever I feel like I should share my knowledge with others, I like to do it via blog posts and social media.",
@@ -13,13 +13,13 @@ export default {
       {
         width: 1200,
         height: 630,
-        url: `https://vjy.me/preview.jpg`,
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/preview.jpg`,
       },
     ],
     site_name: "angganurf",
   },
   twitter: {
-    handle: "@angganurf",
+    handle: "@gawwbtc",
     site: "angganurf.com",
     cardType: "summary_large_image",
   },
