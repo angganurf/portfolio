@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 15, 2023 at 09:58 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Host: 127.0.0.1:3306
+-- Generation Time: Aug 15, 2023 at 10:08 AM
+-- Server version: 10.6.14-MariaDB-cll-lve
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `portfolio`
+-- Database: `u216858742_portfolio`
 --
 
 -- --------------------------------------------------------
@@ -199,13 +199,13 @@ CREATE TABLE `works` (
 --
 
 INSERT INTO `works` (`id`, `title`, `description`, `featured`, `status`, `creation_year`, `thumbnail`, `url`, `created_at`, `updated_at`) VALUES
-(1, '3dicons', 'Beautifully Crafted Open-source 3dicons library', 'Yes', 'UPDATE', '2021-Now', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F3dicons.01da1ba0.png&w=640&q=75', 'https://3dicons.co/?ref=vjyme', '2023-08-14 02:57:52', '2023-08-14 02:57:52'),
-(2, 'Ghost Hand Kit', 'Hand Gestures for AR/VR design experience', 'Yes', 'WIP', '2023', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fghost-hand-kit.23d9faea.png&w=640&q=75', 'https://vjy.me/hand', '2023-08-14 02:57:52', '2023-08-14 02:57:52'),
-(3, 'Noisy Gradients', 'A figma plugin to generate cool grainy gradients', 'Yes', NULL, '2023', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnoisy-gradients.f142b4f6.png&w=640&q=75', 'https://tools.metavatar.app/figma', '2023-08-14 03:01:46', '2023-08-14 03:01:46'),
-(4, 'V5 UI Kit', 'Open-source Figma UI Kit made for this website', 'Yes', NULL, '2023', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fv5.fea9827a.png&w=640&q=75', 'https://vjy.me/v5', '2023-08-14 03:01:46', '2023-08-14 03:01:46'),
-(5, 'Cool Shapes', 'Cool abstract shapes for visual design', 'Yes', 'WIP', '2023', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fshapes.95801ae7.png&w=640&q=75', 'https://vjy.me/shapes', '2023-08-14 03:01:46', '2023-08-14 03:01:46'),
-(6, 'Project Dots', 'A figma plugin for illustaions. More info soon', 'Yes', 'WIP', 'coming soon', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdots.34380c76.png&w=640&q=75', 'https://twitter.com/realvjy/status/1628367876238475267', '2023-08-14 03:01:46', '2023-08-14 03:01:46'),
-(7, 'nxtlnk', 'Custom bio link template for nextjs, like - linktree, bio', 'No', NULL, '2022', 'https://vjy.me/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnxtlnk.1eccaed1.png&w=640&q=75', 'https://nxtlnk.xyz/?ref=vjyme', '2023-08-14 03:04:31', '2023-08-14 03:04:31');
+(1, '3dicons', 'Beautifully Crafted Open-source 3dicons library', 'Yes', 'UPDATE', '2021-Now', '3dicons.webp', 'https://3dicons.co/?ref=vjyme', '2023-08-14 02:57:52', '2023-08-14 02:57:52'),
+(2, 'Ghost Hand Kit', 'Hand Gestures for AR/VR design experience', 'Yes', 'WIP', '2023', 'ghosthandkit.webp', 'https://vjy.me/hand', '2023-08-14 02:57:52', '2023-08-14 02:57:52'),
+(3, 'Noisy Gradients', 'A figma plugin to generate cool grainy gradients', 'Yes', NULL, '2023', 'noisygradient.webp', 'https://tools.metavatar.app/figma', '2023-08-14 03:01:46', '2023-08-14 03:01:46'),
+(4, 'V5 UI Kit', 'Open-source Figma UI Kit made for this website', 'Yes', NULL, '2023', 'v5.webp', 'https://vjy.me/v5', '2023-08-14 03:01:46', '2023-08-14 03:01:46'),
+(5, 'Cool Shapes', 'Cool abstract shapes for visual design', 'Yes', 'WIP', '2023', 'coolshapes.webp', 'https://vjy.me/shapes', '2023-08-14 03:01:46', '2023-08-14 03:01:46'),
+(6, 'Project Dots', 'A figma plugin for illustaions. More info soon', 'Yes', 'WIP', 'coming soon', 'projectdot.webp', 'https://twitter.com/realvjy/status/1628367876238475267', '2023-08-14 03:01:46', '2023-08-14 03:01:46'),
+(7, 'nxtlnk', 'Custom bio link template for nextjs, like - linktree, bio', 'No', NULL, '2022', 'projectdot.webp', 'projectdot.webp', '2023-08-14 03:04:31', '2023-08-14 03:04:31');
 
 --
 -- Indexes for dumped tables

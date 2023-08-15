@@ -49,7 +49,7 @@ export const AllWorks = () => {
                     />
                   </span>
                   <Image
-                    src={item.thumbnail}
+                    src={`/assets/img/works/${item.thumbnail}`}
                     width={100}
                     height={100}
                     alt={item.title}
