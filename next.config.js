@@ -30,7 +30,7 @@ module.exports = withRemoveImports(
           headers: [
             {
               key: "Content-Security-Policy",
-              value: `frame-ancestors 'self' http://localhost http://localhost:3000 https://angganurf.com https://*.angganurf.com https://api.angganurf.com ;`,
+              value: `frame-ancestors 'self' http://localhost http://localhost:3000 https://angganurf.com https://www.angganurf.com https://*.angganurf.com https://api.angganurf.com ;`,
             },
             ...baseSecurityHeaders,
           ],
