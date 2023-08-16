@@ -20,7 +20,7 @@ export default function NameCard() {
           <Image
             src="/angganurfaisal.png"
             width={180}
-            height={180}
+            height={0}
             alt="angga nurfaisal"
             className="w-[70.5%]"
           />
@@ -28,7 +28,7 @@ export default function NameCard() {
           <Image
             src="/angganurfaisal-white.png"
             width={180}
-            height={180}
+            height={0}
             alt="angga nurfaisal"
             className="w-[70.5%]"
           />

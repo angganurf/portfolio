@@ -21,7 +21,6 @@ export default function Logo() {
           width={100}
           height={0}
           alt="angga nurfaisal"
-          className="w-[75%]"
         />
       ) : (
         <Image
@@ -29,7 +28,6 @@ export default function Logo() {
           width={100}
           height={0}
           alt="angga nurfaisal"
-          className="w-[75%]"
         />
       )}
     </Link>

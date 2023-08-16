@@ -197,6 +197,21 @@ body {
   transform: scale(1);
 }
 
+.skeletonCard {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 233, 244, 0.945) 0%,
+    rgba(234, 243, 255, 0.911) 100%
+  );
+}
+.skeletonDarkCard {
+  background: linear-gradient(
+    90deg,
+    rgba(30, 28, 50, 0.8) 0%,
+    rgba(43, 22, 29, 0.7) 100%
+  );
+}
+
 .companies h3 {
   position: absolute;
   margin: 0px;

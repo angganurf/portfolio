@@ -1,4 +1,4 @@
-import Works from "@containers/Works";
+import AllWorks from "@containers/Works";
 import Link from "next/link";
 import React from "react";
 
@@ -20,10 +20,9 @@ export default function CurrenProjects() {
       </div>
       <div
         className="relative grid grid-cols-3 gap-[14px] p-1
-      max-md:grid-cols-1 max-md:gap-[10px]
-      "
+      max-md:grid-cols-1 max-md:gap-[10px]"
       >
-        <Works />
+        <AllWorks />
       </div>
     </div>
   );
