@@ -5,9 +5,9 @@ export default function Intro() {
   return (
     <div>
       <p className="text-xl leading-[140%] font-normal my-4 text-gray-700 dark:text-white max-md:text-[18px] max-md:tracking-[-0.28px] ">
-        A design wizard voyaging into the metaverse. I tell the story through my
-        design and illustrations. I spent most of my time designing for brands
-        and making design resources and tools.
+        Full Stack Web Developer and Graphic Designer. I tell the story through
+        my design and illustrations. I spent most of my time building for
+        Website and tools.
       </p>
       <h4 className="font-medium text-lg text-[rgba(74,87,111,.6)] dark:text-[rgba(114,120,136,.6)] tracking-[-0.2px] max-md:text-base">
         Building what I love at

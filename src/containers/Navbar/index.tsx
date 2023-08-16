@@ -1,4 +1,5 @@
 import Dropdown from "@components/Layout/Dropdown";
+import SkeletonNavbar from "@components/SkeletonCard/SkeletonNavbar";
 import { Pages } from "@interfaces/pages";
 import { getPages } from "@services/pages";
 import Link from "next/link";
@@ -10,19 +11,28 @@ type IProps = {
 };
 export const Navbar = ({ className }: IProps) => {
   const [page, setIsPage] = useState<Pages[]>([]);
+  const [loading, setIsLoading] = useState(true);
 
   const fetchPages = async () => {
     const { result } = await getPages();
-    setIsPage(result);
+    if (result) {
+      setTimeout(() => {
+        setIsLoading(false);
+        setIsPage(result);
+      });
+    }
   };
 
   useAsyncEffect(() => {
     fetchPages();
   }, []);
-
   return (
-    <ul
-      className={`m-0 flex flex-row font-medium 
+    <>
+      {loading ? (
+        <SkeletonNavbar />
+      ) : (
+        <ul
+          className={`m-0 flex flex-row font-medium 
               max-md:bg-[#FFF4F6]
                 max-md:dark:bg-[rgba(28,22,47,.3)]
                 max-md:backdrop-blur-md
@@ -42,46 +52,48 @@ export const Navbar = ({ className }: IProps) => {
                 max-md:z-10
                 scroll-smooth
     `}
-    >
-      {page.slice(0, 5).map((item) => (
-        <li key={item.id}>
-          {item.highlight == "Yes" ? (
-            <Link
-              className="font-bold ml-2 block leading-5 px-2.5 py-0 text-base tracking-[-0.25px] bg-clip-text
+        >
+          {page.slice(0, 5).map((item) => (
+            <li key={item.id}>
+              {item.highlight == "Yes" ? (
+                <Link
+                  className="font-bold ml-2 block leading-5 px-2.5 py-0 text-base tracking-[-0.25px] bg-clip-text
               max-md:text-lg
-              max-md:my-1
+              max-md:my-1 hover:opacity-70 transition-all
               "
-              style={{
-                backgroundSize: "100%",
-                WebkitTextFillColor: "transparent",
-                backgroundRepeat: "repeat",
-                backgroundColor: "#566CEC",
-                backgroundImage:
-                  "linear-gradient(90.42deg,#4AB1F1 0.58%,#566CEC 37.22%,#D749AF 73.87%,#FF7C51 112.26%)",
-              }}
-              href={item.slug}
-            >
-              {item.name}
-            </Link>
-          ) : (
-            <Link
-              className="block leading-5 mx-2.5 py-0 text-base tracking-[-0.25px] cursor-pointer
+                  style={{
+                    backgroundSize: "100%",
+                    WebkitTextFillColor: "transparent",
+                    backgroundRepeat: "repeat",
+                    backgroundColor: "#566CEC",
+                    backgroundImage:
+                      "linear-gradient(90.42deg,#4AB1F1 0.58%,#566CEC 37.22%,#D749AF 73.87%,#FF7C51 112.26%)",
+                  }}
+                  href={item.slug}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <Link
+                  className="block leading-5 mx-2.5 py-0 text-base tracking-[-0.25px] cursor-pointer
               max-md:text-lg
-              max-md:my-1
+              max-md:my-1 hover:opacity-70 transition-all
               "
-              href={item.slug}
-            >
-              {item.name}
-            </Link>
-          )}
-        </li>
-      ))}
-      <>
-        <li>
-          <Dropdown />
-        </li>
-      </>
-    </ul>
+                  href={item.slug}
+                >
+                  {item.name}
+                </Link>
+              )}
+            </li>
+          ))}
+          <>
+            <li>
+              <Dropdown />
+            </li>
+          </>
+        </ul>
+      )}
+    </>
   );
 };
 

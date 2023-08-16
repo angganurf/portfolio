@@ -10,6 +10,8 @@ export default function SocialIcons() {
         href={`${process.env.NEXT_PUBLIC_X_LINK}`}
       >
         <svg
+          role="img"
+          aria-labelledby="X or Twitter angganurfaisal"
           width="16"
           height="16"
           fill="currentColor"
@@ -17,6 +19,7 @@ export default function SocialIcons() {
           clipRule="evenodd"
           viewBox="0 0 300 300"
           version="1.1"
+          className="hover:opacity-70 transition-all"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66"></path>
@@ -28,12 +31,14 @@ export default function SocialIcons() {
         href={`${process.env.NEXT_PUBLIC_IG_LINK}`}
       >
         <svg
+          role="img"
+          aria-labelledby="Instagram angganurfaisal"
           width="16"
           height="16"
           fill="currentColor"
           fillRule="evenodd"
           clipRule="evenodd"
-          className="insta-icon"
+          className="hover:opacity-70 transition-all"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -43,27 +48,22 @@ export default function SocialIcons() {
       <Link
         target="_blank"
         className="mx-3 my-0.5"
-        href={`${process.env.NEXT_PUBLIC_FB_LINK}`}
+        href={`${process.env.NEXT_PUBLIC_GT_LINK}`}
       >
         <svg
-          width="16"
-          height="16"
+          className="hover:opacity-70 transition-all"
+          aria-hidden="true"
           fill="currentColor"
           fillRule="evenodd"
           clipRule="evenodd"
-          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          version="1.1"
           viewBox="0 0 16 16"
-          strokeWidth="1.3"
-          id="facebook"
         >
           <path
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeMiterlimit="10"
-            d="M12.5 6h-3V4a1 1 0 0 1 1-1h1V.5h-2a3 3 0 0 0-3 3V6h-2v2.5h2v7h3v-7h2l1-2.5z"
-            clipRule="evenodd"
+            fill-rule="evenodd"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
           ></path>
         </svg>
       </Link>
