@@ -1,3 +1,4 @@
+import WorksPage from "@components/WorksPage";
 import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
 import React from "react";
@@ -9,11 +10,11 @@ export default function About() {
     description:
       "A design wizard voyaging into the metaverse. I tell the story through my design and illustrations. I spent most of my time designing for brands and making design resources and tools.",
   };
-  if (router.query.slug === "about") {
+  if (router.query.slug === "work") {
     return (
       <>
         <NextSeo {...updateMeta} />
-        <div>hello about</div>
+        <WorksPage />
       </>
     );
   }

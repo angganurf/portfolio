@@ -248,7 +248,12 @@ body {
 
 .left {
   transform: scale(-1, 1);
-  opacity: 0.4;
+  opacity: 0.2;
+}
+
+.right {
+  transform: scale(1, 1);
+  opacity: 0.2;
 }
 
 @keyframes scroll {

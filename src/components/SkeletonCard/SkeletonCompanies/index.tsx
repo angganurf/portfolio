@@ -14,16 +14,14 @@ export default function SkeletonCompanies() {
   return (
     <>
       <div className="ml-2 flex relative animate-pulse ">
-        {...Array(10)
-          .fill(2)
-          .map((index: number) => (
-            <div
-              key={index}
-              className={`flex w-28 m-0 h-3 mr-10 relative rounded-xl  ${
-                currentTheme === "light" ? "skeletonCard" : "skeletonDarkCard"
-              }`}
-            />
-          ))}
+        {...[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((index: number) => (
+          <div
+            key={index}
+            className={`flex w-28 m-0 h-3 mr-10 relative rounded-xl  ${
+              currentTheme === "light" ? "skeletonCard" : "skeletonDarkCard"
+            }`}
+          />
+        ))}
       </div>
     </>
   );

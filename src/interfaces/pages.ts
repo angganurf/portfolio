@@ -5,5 +5,5 @@ export type Pages = {
   highlight: string;
   slug: string;
   description: string;
-  contents: string[];
+  meta_title: string;
 };
