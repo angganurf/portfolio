@@ -2,8 +2,6 @@ import { IGetWorksResponse } from "@interfaces/api/works";
 import { Works } from "@interfaces/works";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
 import WorksPage from "@components/WorksPage";
 import PageTitle from "@components/PageTitle";
 

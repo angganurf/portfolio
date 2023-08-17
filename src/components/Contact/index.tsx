@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 
 export default function Contact() {
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { systemTheme, theme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {

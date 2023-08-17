@@ -3,6 +3,7 @@ import SkeletonNavbar from "@components/SkeletonCard/SkeletonNavbar";
 import { Pages } from "@interfaces/pages";
 import { getPages } from "@services/pages";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import useAsyncEffect from "use-async-effect";
 
@@ -12,6 +13,7 @@ type IProps = {
 export const Navbar = ({ className }: IProps) => {
   const [page, setIsPage] = useState<Pages[]>([]);
   const [loading, setIsLoading] = useState(true);
+  const router = useRouter();
 
   const fetchPages = async () => {
     const { result } = await getPages();
@@ -58,27 +60,17 @@ export const Navbar = ({ className }: IProps) => {
               {item.highlight == "Yes" ? (
                 <Link
                   className="font-bold ml-2 block leading-5 px-2.5 py-0 text-base tracking-[-0.25px] bg-clip-text
-              max-md:text-lg
-              max-md:my-1 hover:opacity-70 transition-all
-              "
-                  style={{
-                    backgroundSize: "100%",
-                    WebkitTextFillColor: "transparent",
-                    backgroundRepeat: "repeat",
-                    backgroundColor: "#566CEC",
-                    backgroundImage:
-                      "linear-gradient(90.42deg,#4AB1F1 0.58%,#566CEC 37.22%,#D749AF 73.87%,#FF7C51 112.26%)",
-                  }}
+                  max-md:text-lg
+                  max-md:my-1 hover:opacity-70 transition-all gradient-retro-2"
                   href={item.slug}
                 >
                   {item.name}
                 </Link>
               ) : (
                 <Link
-                  className="block leading-5 mx-2.5 py-0 text-base tracking-[-0.25px] cursor-pointer
+                  className={`block leading-5 mx-2.5 py-0 text-base tracking-[-0.25px] cursor-pointer
               max-md:text-lg
-              max-md:my-1 hover:opacity-70 transition-all
-              "
+              max-md:my-1 hover:opacity-70 transition-all`}
                   href={item.slug}
                 >
                   {item.name}

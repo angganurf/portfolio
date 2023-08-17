@@ -7,13 +7,23 @@ import { getPages } from "@services/pages";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export default function WorksPage({ item }: { item: Works }) {
+  const { systemTheme, theme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
+  const currentTheme = theme === "system" ? systemTheme : theme;
   return (
     <Link href={`${item.url}`} target="_blank" rel="norefere" key={item.id}>
       <div
         className={`mb-3 relative cursor-pointer p-3 rounded-3xl max-md:flex max-md:justify-start max-md:webkit-box-align-center max-md:items-center max-md:rounded-[20px] 
-            
+            ${currentTheme === "light" ? "workcard" : "workcardDark"}
             `}
       >
         <div className="w-full relative rounded-xl max-md:!w-24">

@@ -3,10 +3,16 @@ import ThemeSwitcher from "../../ThemeSwitcher";
 import SocialIcons from "@components/SocialIcons";
 import Logo from "@components/Logo";
 import Hamburger from "../Hamburger";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Header() {
   const [showNav, setShowNav] = useState(false);
+  const { asPath } = useRouter();
+
+  useEffect(() => {
+    setShowNav(false);
+  }, [asPath]);
 
   const handleButton = () => {
     setShowNav(!showNav);
