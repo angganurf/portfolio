@@ -14,7 +14,6 @@ export default function About() {
     return (
       <>
         <NextSeo {...updateMeta} />
-        <WorksPage />
       </>
     );
   }

@@ -64,7 +64,9 @@ export const get = async <R>(
   url: string,
   config?: RequestConfig
 ): Promise<R> => {
-  const requestOptions: RequestInit = getRequestOptions(HttpMethod.GET, config);
+  const requestOptions: RequestInit = getRequestOptions(HttpMethod.GET, {
+    next: { tags: ["collection"] },
+  });
   const requestUrl = getRequestEndpoint(
     url,
     !!config?.externalResource,
