@@ -23,7 +23,7 @@ const Worksed: React.FC<Props> = ({ data }) => {
   max-md:grid-cols-1 max-md:gap-[10px]"
       >
         {data.result.map((item: Works) => (
-          <WorksPage item={item} />
+          <WorksPage key={item.id} item={item} />
         ))}
       </div>
     </div>
