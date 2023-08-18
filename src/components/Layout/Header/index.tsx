@@ -12,11 +12,9 @@ export default function Header() {
 
   useEffect(() => {
     setShowNav(false);
-    if (showNav === false) {
-      document.body.style.overflow = "hidden";
-    } else {
+    
       document.body.style.overflow = "";
-    }
+    
   }, [asPath]);
 
   const handleButton = () => {
