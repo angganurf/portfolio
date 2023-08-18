@@ -11,10 +11,7 @@ export default function Header() {
   const { asPath } = useRouter();
 
   useEffect(() => {
-    setShowNav(false);
-    
-      document.body.style.overflow = "";
-    
+  document.body.style.overflow = "";
   }, [asPath]);
 
   const handleButton = () => {
