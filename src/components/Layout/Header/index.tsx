@@ -12,6 +12,7 @@ export default function Header() {
 
   useEffect(() => {
     setShowNav(showNav);
+    handleButton();
   }, [asPath]);
 
   const handleButton = () => {
