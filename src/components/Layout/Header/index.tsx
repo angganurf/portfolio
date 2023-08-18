@@ -11,7 +11,7 @@ export default function Header() {
   const { asPath } = useRouter();
 
   useEffect(() => {
-    setShowNav(false);
+    setShowNav(showNav);
   }, [asPath]);
 
   const handleButton = () => {
