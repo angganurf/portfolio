@@ -21,11 +21,7 @@ export default function Header() {
 
   const handleButton = () => {
     setShowNav(!showNav);
-    if (!showNav === true) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = "hidden";
   };
   return (
     <>
