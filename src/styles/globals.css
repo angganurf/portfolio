@@ -257,6 +257,84 @@ body {
   opacity: 0.2;
 }
 
+.socialButton-Blue {
+  background: linear-gradient(
+    270deg,
+    rgb(195, 194, 255) 0%,
+    rgb(157, 190, 255) 100%
+  );
+  color: rgba(28, 48, 157, 0.7);
+}
+.socialButton-Purple {
+  background: linear-gradient(
+    270deg,
+    rgb(240, 214, 255) 0%,
+    rgb(211, 205, 255) 100%
+  );
+  color: rgba(92, 27, 174, 0.8);
+}
+.socialButton-Orange {
+  background: linear-gradient(
+    270deg,
+    rgb(251, 206, 255) 0%,
+    rgb(255, 209, 209) 100%
+  );
+  color: rgba(208, 0, 166, 0.8);
+}
+
+a.socialButton {
+  padding: 6px 12px;
+  border-radius: 18px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+}
+.timeline-card-wrap {
+  width: 420px;
+  position: relative;
+  padding-left: 16px;
+  padding-bottom: 3rem;
+  border-left: 1px solid rgba(34, 36, 44, 0.15);
+}
+.timeline-card-wrap::before {
+  background: linear-gradient(
+    270deg,
+    rgb(195, 193, 255) 0%,
+    rgb(162, 193, 255) 100%
+  );
+  border: 1px solid var(--border-line);
+  content: "";
+  display: block;
+  float: left;
+  height: 10px;
+  left: -7px;
+  position: absolute;
+  top: -0.125rem;
+  width: 10px;
+  border-radius: 12px;
+}
+
+.timeline-card-second {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  transform: translateY(-20px);
+}
+.timeline-card-second::before {
+  content: "";
+  border-radius: 16px;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  inset: -2px;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0%);
@@ -279,5 +357,23 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+  a.socialButton {
+    font-size: 15px;
+    letter-spacing: var(--lspace-15);
+    padding: 4px 10px;
+  }
+  .timeline-card-wrap {
+    padding-bottom: 40px;
+    width: 100%;
+  }
+  .timeline-card-wrap::before {
+    top: -10px;
+  }
+  .timeline-card-second {
+    transform: translateY(2px);
+  }
+  .timeline-card-second::before {
+    border-radius: 14px;
   }
 }
