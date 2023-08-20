@@ -1,27 +1,27 @@
-import Navbar from "@containers/Navbar";
-import ThemeSwitcher from "../../ThemeSwitcher";
+import Navbar from "@components/Navbar";
+import ThemeSwitcher from "@components/ThemeSwitcher";
 import SocialIcons from "@components/SocialIcons";
 import Logo from "@components/Logo";
-import Hamburger from "../Hamburger";
+import Hamburger from "@components/Hamburger";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 export default function Header() {
   const [showNav, setShowNav] = useState(false);
-  const { asPath } = useRouter();
-
-  useEffect(() => {
-  showNav
-  document.body.style.overflow = "";
-  }, [asPath]);
+  const toggle = !showNav;
 
   const handleButton = () => {
-    setShowNav(!showNav);
+    setShowNav(toggle);
     if (!showNav === true) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
+  };
+
+  const handleBg = () => {
+    setShowNav(toggle);
+    document.body.style.overflow = "";
   };
   return (
     <>
@@ -32,8 +32,9 @@ export default function Header() {
           </div>
           <div className="ml-2 relative">
             <Navbar
+              onClick={() => handleBg()}
               className={`${
-                showNav ? "max-md:right-0" : "max-md:right-[-388px]"
+                !showNav ? "max-md:right-[-388px]" : "max-md:right-0"
               }`}
             />
           </div>

@@ -2,7 +2,7 @@ import React, { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Inter } from "next/font/google";
-import Texture from "./Texture";
+import Texture from "../Texture";
 
 type IProps = {
   children: ReactNode;

@@ -1,41 +1,36 @@
 import { useEffect, useState } from "react";
-import { Works } from "@interfaces/works";
-import { getWorks } from "@services/works";
 import useAsyncEffect from "use-async-effect";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import SkeletonCard from "@components/SkeletonCard";
+import useSWR from "swr";
+import fetcher from "@lib/fetcher";
+import { Works } from "@prisma/client";
 
 export const CurrenProjects = () => {
-  const [works, setIsWorks] = useState<Works[]>([]);
-  const [loading, setIsLoading] = useState(true);
   const { systemTheme, theme } = useTheme();
 
   const currentTheme = theme === "system" ? systemTheme : theme;
+  const [loading, setIsLoading] = useState(false);
 
-  const fetchWorks = async () => {
-    const { result } = await getWorks();
-    if (result) {
-      setTimeout(() => {
-        setIsLoading(false);
-        setIsWorks(result);
-      });
-    }
-  };
-
-  useAsyncEffect(() => {
-    fetchWorks();
-  }, []);
+  const { data, error } = useSWR<{ work: Works[] }>(
+    "/api/works?limit=10",
+    fetcher
+  );
   let skeletonCard = [0, 1, 2, 3, 5, 6];
+  if (error) return <div>failed to load</div>;
+  if (!data)
+    return skeletonCard.map((index: number) => <SkeletonCard key={index} />);
+
   return (
     <>
       {loading ? (
         skeletonCard.map((index: number) => <SkeletonCard key={index} />)
       ) : (
         <>
-          {works
-            .filter((item) => item.featured === "Yes")
+          {data?.work
+            .filter((item) => item.featured === true)
             .map((item) => (
               <Link
                 href={`${item.url}`}
@@ -60,22 +55,24 @@ export const CurrenProjects = () => {
                         />
                       </span>
                       <Image
-                        src={`/assets/img/works/${item.thumbnail}`}
+                        src={`${item.thumbnail}`}
                         width={100}
                         height={100}
-                        alt={item.title}
+                        alt={`${item.name}`}
+                        blurDataURL={`${item.blurDataUrl}`}
+                        placeholder="blur"
                         className="absolute inset-0 box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full rounded-xl"
                       />
                     </span>
-                    {item.status ? (
+                    {item.type ? (
                       <div
                         className={`absolute top-2 left-2 font-bold leading-[14px] text-[10px] py-[1px] px-[6px] rounded-lg inline-flex uppercase text-white ${
-                          item.status === "UPDATE"
+                          item.type === "UPDATE"
                             ? "bg-pink-400"
                             : "bg-green-700"
                         } max-md:top-[6px] max-md:left-[6px] max-md:text-[9px] max-md:px-1 `}
                       >
-                        {item.status}
+                        {item.type}
                       </div>
                     ) : (
                       <div></div>
@@ -83,7 +80,7 @@ export const CurrenProjects = () => {
                   </div>
                   <div className="flex flex-col mt-[6px] max-md:ml-3 max-md:mr-2 max-md:mb-0">
                     <h3 className="text-base font-bold tracking-[-0.4px] webkit-box-align-center items-center flex mb-1 mx-0 max-md:mt-0 max-md:text-[15px] max-md:tracking-[-0.18px]">
-                      {item.title}
+                      {item.name}
                     </h3>
                     <p className="text-[15px] m-0 opacity-60 tracking-[-0.25px] font-normal leading-[140%] max-md:text-sm max-md:tracking-[-0.15px]">
                       {item.description}

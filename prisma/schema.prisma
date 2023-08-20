@@ -1,0 +1,155 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Pages {
+  id          Int       @id @default(autoincrement())
+  title       String?   @db.VarChar(255)
+  description String?   @db.VarChar(255)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Companies {
+  id          Int       @id @default(autoincrement())
+  name        String?   @db.VarChar(255)
+  type        String?   @db.VarChar(255)       
+  url         String?   @db.VarChar(255)
+  icon        String?   @db.VarChar(255)
+}
+
+model Works {
+  id          Int       @id @default(autoincrement())
+  name        String?   @db.VarChar(255)
+  description String?   @db.VarChar(255)
+  type        String?   @db.VarChar(255)
+  featured    Boolean   @default(false)
+  tag         String?   @db.VarChar(255)
+  year        String?   @db.VarChar(255)
+  thumbnail   String?   @db.VarChar(255)
+  url         String?   @db.VarChar(255)
+  blurDataUrl String?   @db.Text
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt  
+}
+
+model Timeline {
+  id          Int       @id @default(autoincrement())
+  name        String?   @db.VarChar(255)
+  description String?   @db.VarChar(255)
+  StarterDate String?   @db.VarChar(255)
+  tag         Json?      
+  image       String?   @db.VarChar(255)
+  blurDataUrl String?   @db.Text
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt  
+}
+
+model About {
+  id          Int       @id @default(autoincrement())
+  about       String?
+  current     String?
+  goSearch    String?   @db.VarChar(255)
+  urlLink     String?   @db.VarChar(255)
+  email       String?   @db.VarChar(255)
+  xLink       String?   @db.VarChar(255)
+  gitLink     String?   @db.VarChar(255)
+  igLink      String?   @db.VarChar(255)
+  fbLink      String?   @db.VarChar(255)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Story {
+  id          Int       @id @default(autoincrement())
+  title       String?   @db.VarChar(255)
+  description String?   
+  url         String?   @db.VarChar(255)
+  type        String?   @db.VarChar(255)
+  featured    Boolean   @default(false)  
+  date        String?   @db.VarChar(255)
+  publication String?   @db.VarChar(255)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+}
+
+model Supporters {
+  id          Int       @id @default(autoincrement())
+  date        DateTime 
+  name        String?   @db.VarChar(255)
+  source      String    @db.VarChar(255)
+  url         String?   @db.VarChar(255)
+  featured    Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Bookshelf {
+  id          Int       @id @default(autoincrement())
+  name        String?   @db.VarChar(255)
+  description String?   @db.VarChar(255)
+  url         String?   @db.VarChar(255)
+  type        String?   @db.VarChar(255)
+  featured    Boolean   @default(false)
+  year        String?   @db.VarChar(255)  
+  image       String    @db.VarChar(255)
+  blurDataUrl String?   @db.Text  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Nft {
+  id          Int       @id @default(autoincrement())
+  name        String?   @db.VarChar(255)
+  description String?   @db.VarChar(255)
+  url         String?   @db.VarChar(255)
+  twitter     String?   @db.VarChar(255)
+  edition     String?   @db.VarChar(255)
+  marketplace String?   @db.VarChar(255)
+  featured    Boolean   @default(false)
+  price       String?   @db.VarChar(255)
+  owner       String?   @db.VarChar(255)
+  tag         String?   @db.VarChar(255)
+  date        String?   @db.VarChar(255)
+  image       String?   @db.VarChar(255)
+  blurDataUrl String?   @db.Text  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Link {
+  id          Int       @id @default(autoincrement())
+  title       String?   @db.VarChar(255)
+  url         String?   @db.VarChar(255)
+  type        String?   @db.VarChar(255)
+  icon        String?   @db.VarChar(255)
+  blurDataUrl String?   @db.Text  
+  on          Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Stack {
+  id          Int       @id @default(autoincrement())
+  name        String?   @db.VarChar(255)
+  description String?   @db.VarChar(255)
+  url         String?   @db.VarChar(255)
+  type        String?   @db.VarChar(255)
+  featured    Boolean   @default(false)
+  tag         String?   @db.VarChar(255)
+  year        String?   @db.VarChar(255)
+  icon        String?   @db.VarChar(255)
+  blurDataUrl String?   @db.Text  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+}

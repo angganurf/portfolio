@@ -1,19 +1,7 @@
-import { Pages } from "@interfaces/pages";
-import { getPages } from "@services/pages";
 import Link from "next/link";
-import React, { useState } from "react";
-import useAsyncEffect from "use-async-effect";
+import React from "react";
 
 export default function Footer() {
-  const [page, setIsPage] = useState<Pages[]>([]);
-
-  const fetchPages = async () => {
-    const { result } = await getPages();
-    setIsPage(result);
-  };
-  useAsyncEffect(() => {
-    fetchPages();
-  }, []);
   return (
     <div className="mt-[100px] max-md:mt-10">
       <div className="flex p-4 flex-col webkit-box-pack-center justify-center items-center relative">
@@ -32,17 +20,51 @@ export default function Footer() {
         </div>
         <div className="py-1 px-0 mb-5">
           <ul className="flex webkit-box-align-center items-center webkit-box-pack-center justify-center m-0 max-md: flex-wrap py-0 px-6">
-            {page.slice(5, 10).map((item) => (
-              <li key={item.id}>
-                <Link
-                  href={item.slug}
-                  className="text-[12px] font-medium text-[rgba(74,87,111,.6)] dark:text-[rgba(114,120,136,.6)] opacity-40 hover:opacity-90 py-0 px-2
+            <li>
+              <Link
+                href="/thanks"
+                className="text-[12px] font-medium text-[rgba(74,87,111,.6)] dark:text-[rgba(114,120,136,.6)] opacity-40 hover:opacity-90 py-0 px-2
                   max-md:text-[11px] max-md:tracking-[0.08px]"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
+              >
+                supporters
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/book"
+                className="text-[12px] font-medium text-[rgba(74,87,111,.6)] dark:text-[rgba(114,120,136,.6)] opacity-40 hover:opacity-90 py-0 px-2
+                  max-md:text-[11px] max-md:tracking-[0.08px]"
+              >
+                bookshelf
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/stack"
+                className="text-[12px] font-medium text-[rgba(74,87,111,.6)] dark:text-[rgba(114,120,136,.6)] opacity-40 hover:opacity-90 py-0 px-2
+                  max-md:text-[11px] max-md:tracking-[0.08px]"
+              >
+                tech stack
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/photos"
+                className="text-[12px] font-medium text-[rgba(74,87,111,.6)] dark:text-[rgba(114,120,136,.6)] opacity-40 hover:opacity-90 py-0 px-2
+                  max-md:text-[11px] max-md:tracking-[0.08px]"
+              >
+                photos
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/lnk"
+                className="text-[12px] font-medium text-[rgba(74,87,111,.6)] dark:text-[rgba(114,120,136,.6)] opacity-40 hover:opacity-90 py-0 px-2
+                  max-md:text-[11px] max-md:tracking-[0.08px]"
+              >
+                links
+              </Link>
+            </li>
           </ul>
         </div>
         <div

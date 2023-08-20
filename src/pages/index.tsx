@@ -1,8 +1,8 @@
 import Avatar from "@components/Avatar";
 import Companies from "@components/Companies";
-import CompaniesBottom from "@components/Companies/CompaniesBottom";
+import CompaniesBottom from "@components/CompaniesBottom";
 import Contact from "@components/Contact";
-import CurrenProjects from "@components/CurrentProjects";
+import FeaturedWork from "@components/FeaturedWork";
 import Intro from "@components/Intro";
 import NameCard from "@components/NameCard";
 import { NextSeo } from "next-seo";
@@ -28,7 +28,7 @@ export default function Home() {
           <Companies />
         </div>
       </div>
-      <CurrenProjects />
+      <FeaturedWork />
       <Contact />
       <CompaniesBottom />
     </>
