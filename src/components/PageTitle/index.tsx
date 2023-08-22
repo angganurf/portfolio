@@ -15,7 +15,7 @@ export default function PageTitle({ title, description, className }: IProps) {
       <h2 className="gradient-retro-2 inline-block text-[32px] mb-2 tracking-[-1.2px] font-bold max-md:mb-1 max-md:text-[30px] max-md:tracking-[-1px]">
         {title}
       </h2>
-      <p className="text-[18px] leading-[138%] tracking-[-0.28px] max-md:mt-4 max-md:text-[16px] max-md:tracking-[-0.25px]">
+      <p className="text-[18px] leading-[140%] tracking-[-0.28px] max-md:mt-[10px] max-md:text-[16px] max-md:tracking-[-0.25px]">
         {description}
       </p>
       <div className="flex webkit-box-pack-center justify-center webkit-box-align-center items-center my-4 mx-0 max-md:scale-[0.8]">
