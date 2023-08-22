@@ -8,6 +8,7 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+  relationMode = "prisma"
 }
 
 model Pages {
@@ -46,12 +47,24 @@ model Timeline {
   name        String?   @db.VarChar(255)
   description String?   @db.VarChar(255)
   StarterDate String?   @db.VarChar(255)
-  tag         Json?      
+  tags        Tag[]
   image       String?   @db.VarChar(255)
   blurDataUrl String?   @db.Text
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt  
 }
+
+model Tag {
+  id          Int       @id @default(autoincrement())
+  name        String?   @db.VarChar(255)
+  bgColor     String?   @db.VarChar(255)
+  txtColor    String?   @db.VarChar(255)
+  timelines   Timeline[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+
 
 model About {
   id          Int       @id @default(autoincrement())

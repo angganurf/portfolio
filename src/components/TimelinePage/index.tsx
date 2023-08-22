@@ -1,4 +1,5 @@
 import SkeletonCard from "@components/SkeletonCard";
+import TimelineCard from "@components/TimelineCard";
 import fetcher from "@lib/fetcher";
 import { Timeline } from "@prisma/client";
 import { useTheme } from "next-themes";
@@ -26,8 +27,10 @@ export default function TimelinePage() {
     return skeletonCard.map((index: number) => <SkeletonCard key={index} />);
 
   return (
-    <div className="pt-[60px] max-md:pt-[16px]">
-      <div></div>
+    <div className="pt-[60px] max-md:p-[16px]">
+      <div>
+        <TimelineCard />
+      </div>
     </div>
   );
 }

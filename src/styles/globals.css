@@ -293,12 +293,15 @@ a.socialButton {
   line-height: 20px;
   position: relative;
 }
+.card:first-child .wrap::before {
+  background: #f81ce5;
+}
+
 .timeline-card-wrap {
   width: 420px;
   position: relative;
   padding-left: 16px;
   padding-bottom: 3rem;
-  border-left: 1px solid rgba(34, 36, 44, 0.15);
 }
 .timeline-card-wrap::before {
   background: linear-gradient(
@@ -306,15 +309,15 @@ a.socialButton {
     rgb(195, 193, 255) 0%,
     rgb(162, 193, 255) 100%
   );
-  border: 1px solid var(--border-line);
+  border: 1px solid rgba(34, 36, 44, 0.15);
   content: "";
   display: block;
   float: left;
-  height: 10px;
-  left: -7px;
+  height: 12px;
+  left: -6.9px;
   position: absolute;
   top: -0.125rem;
-  width: 10px;
+  width: 12px;
   border-radius: 12px;
 }
 

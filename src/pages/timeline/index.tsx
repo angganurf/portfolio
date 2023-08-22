@@ -19,12 +19,8 @@ export default function index() {
           description={updateMeta.description}
         />
         <SocialLinksPage />
-        <div
-          className="relative grid grid-cols-3 gap-[14px] p-1
-  max-md:grid-cols-1 max-md:gap-[10px]"
-        >
-          <TimelinePage />
-        </div>
+
+        <TimelinePage />
       </div>
     </>
   );

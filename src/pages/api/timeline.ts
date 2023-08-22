@@ -16,7 +16,15 @@ export default async function handler(
   if (req.method !== "POST") {
     const { limit = 1 } = req.query;
 
-    const timeline = await prisma.timeline.findMany({ take: Number(limit) });
+    const timeline = await prisma.timeline.findMany({
+      take: Number(limit),
+      orderBy: {
+        id: "desc",
+      },
+      include: {
+        tags: true,
+      },
+    });
     return res.status(200).json({ timeline });
   }
 }
