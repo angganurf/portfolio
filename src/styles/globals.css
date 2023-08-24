@@ -92,6 +92,9 @@ body {
     #ff7c51 112.26%
   );
 }
+.progress {
+  color: red;
+}
 .gradient-sky-2 {
   background-size: 100%;
   background-clip: text;

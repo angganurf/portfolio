@@ -1,4 +1,5 @@
 import Dropdown from "@components/Dropdown";
+import ListsNavbar from "@components/ListsNavbar";
 import SkeletonNavbar from "@components/SkeletonCard/SkeletonNavbar";
 
 import Link from "next/link";
@@ -33,55 +34,69 @@ export const Navbar = ({ className, onClick }: IProps) => {
                 closing
     `}
       >
-        <li>
-          <Link
-            className="font-bold ml-2 block leading-5 px-2.5 py-0 text-base tracking-[-0.25px] bg-clip-text
-                  max-md:text-lg
-                  max-md:my-1 hover:opacity-70 transition-all gradient-retro-2"
-            href="/nft"
-            onClick={onClick}
-          >
-            nft
-          </Link>
-        </li>
+        <ListsNavbar
+          name="nft"
+          url="/nft"
+          onClick={onClick}
+          className="bg-clip-text ml-2 font-bold gradient-retro-2 px-2.5"
+        />
 
-        <li>
-          <Link
-            className={`block leading-5 mx-2.5 py-0 text-base tracking-[-0.25px] cursor-pointer
-              max-md:text-lg
-              max-md:my-1 hover:opacity-70 transition-all`}
-            href="/work"
-            onClick={onClick}
-          >
-            work
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={`block leading-5 mx-2.5 py-0 text-base tracking-[-0.25px] cursor-pointer
-              max-md:text-lg
-              max-md:my-1 hover:opacity-70 transition-all`}
-            href="/timeline"
-            onClick={onClick}
-          >
-            timeline
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={`block leading-5 mx-2.5 py-0 text-base tracking-[-0.25px] cursor-pointer
-              max-md:text-lg
-              max-md:my-1 hover:opacity-70 transition-all`}
-            href="/about"
-            onClick={onClick}
-          >
-            about
-          </Link>
-        </li>
+        <ListsNavbar
+          name="work"
+          url="/work"
+          onClick={onClick}
+          className="mx-2.5"
+        />
 
-        <li>
-          <Dropdown />
-        </li>
+        <ListsNavbar
+          name="timeline"
+          url="/timeline"
+          onClick={onClick}
+          className="mx-2.5"
+        />
+        <ListsNavbar
+          name="about"
+          url="/about"
+          onClick={onClick}
+          className="mx-2.5"
+        />
+        <ListsNavbar
+          name="blog"
+          url="/blog"
+          onClick={onClick}
+          className="mx-2.5"
+        />
+        <ListsNavbar
+          name="supporters"
+          url="/thanks"
+          onClick={onClick}
+          className="mx-2.5 hidden max-md:block"
+        />
+        <ListsNavbar
+          name="bookshelf"
+          url="/book"
+          onClick={onClick}
+          className="mx-2.5 hidden max-md:block"
+        />
+        <ListsNavbar
+          name="tech stack"
+          url="/stack"
+          onClick={onClick}
+          className="mx-2.5 hidden max-md:block"
+        />
+        <ListsNavbar
+          name="photos"
+          url="https://instagram.com/angganurfaisal"
+          onClick={onClick}
+          className="mx-2.5 hidden max-md:block"
+        />
+        <ListsNavbar
+          name="links"
+          url="/links"
+          onClick={onClick}
+          className="mx-2.5 hidden max-md:block"
+        />
+        <Dropdown />
       </ul>
     </>
   );

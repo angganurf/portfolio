@@ -6,6 +6,7 @@ import SEO from "../../next-seo.config";
 import { ThemeProvider } from "next-themes";
 import Layout from "@/components/Layout";
 import Head from "next/head";
+import NextNProgress from "nextjs-progressbar";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -43,6 +44,14 @@ export default function App({ Component, pageProps }: AppProps) {
                 content: "IE=edge; chrome=1",
               },
             ]}
+          />
+          <NextNProgress
+            color="#CB5FBF"
+            startPosition={0.5}
+            stopDelayMs={10}
+            height={3}
+            showOnShallow={true}
+            options={{ easing: "ease", speed: 100 }}
           />
           <Component {...pageProps} />
         </Layout>
