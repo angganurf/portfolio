@@ -89,11 +89,13 @@ export default function TimelinePage() {
                           <Image
                             src={`${item.image}`}
                             alt={`${item.name}`}
-                            width={1000}
-                            height={1000}
+                            width={0}
+                            height={0}
                             blurDataURL={`${item.blurDataUrl}`}
                             placeholder="blur"
-                            className="w-full rounded-xl"
+                            className="rounded-xl w-auto"
+                            unoptimized
+                            layout="responsive"
                           />
                         </span>
                       </div>

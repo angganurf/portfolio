@@ -1,6 +1,6 @@
-import Marquee from "@components/Marquee";
 import Link from "next/link";
 import React from "react";
+import Lists from "./Lists";
 
 export default function Companies() {
   return (
@@ -19,7 +19,16 @@ export default function Companies() {
         <div className="w-full relative overflow-visible mt-5 h-[50px] flex webkit-box-align-center items-center webkit-mask-image">
           <div className="gradient-bg"></div>
           <div className="marquee-container">
-            <Marquee />
+            <div className="marquee">
+              <ul className="flex list-none webkit-box-align-center items-center transition-all">
+                <Lists />
+              </ul>
+            </div>
+            <div className="marquee" aria-hidden="true">
+              <ul className="flex list-none webkit-box-align-center items-center transition-all">
+                <Lists />
+              </ul>
+            </div>
           </div>
         </div>
       </Link>
