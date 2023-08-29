@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.16",
-    "@notionhq/client": "^2.2.11",
+    "@notionhq/client": "^2.2.12",
     "@prisma/client": "^5.2.0",
     "@types/node": "20.4.9",
     "@types/react": "18.2.19",
