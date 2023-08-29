@@ -27,7 +27,7 @@ export function ArticleCard({ article }: Props) {
     if (article) {
       setTimeout(() => {
         setLoading(false);
-      }, 100);
+      });
     }
   }, [article]);
 
@@ -50,10 +50,10 @@ export function ArticleCard({ article }: Props) {
           ${currentTheme === "light" ? "workcard" : "workcardDark"}
             `}
           >
-            <div className="w-full relative rounded-xl max-md:!w-24">
-              <span className="rounded-xl max-md:!w-24">
+            <div className="w-full relative rounded-xl">
+              <span className="rounded-xl">
                 <Image
-                  className="absolute inset-0 boxborder p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full rounded-xl"
+                  className="rounded-xl"
                   src={article.coverImage}
                   placeholder="blur"
                   blurDataURL={article.coverImage}

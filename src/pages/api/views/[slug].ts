@@ -14,7 +14,21 @@ export default async function handler(
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   });
   if (req.method !== "POST") {
-    const work = await prisma.works.findMany();
-    return res.status(200).json({ work });
+    const { limit = 1 } = req.query;
+
+    const page = await prisma.pages.findMany({
+      select: {
+        view_count: true,
+      },
+      where: {
+        slug: `${req.query.slug}`,
+      },
+    });
+    if (page) {
+      return res.status(200).json({
+        total: page[0]?.view_count || null,
+      });
+    }
+    return res.status(200).json({ page });
   }
 }

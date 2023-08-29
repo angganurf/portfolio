@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import fetcher from "@lib/fetcher";
 import useSWR from "swr";
 import { About } from "@prisma/client";
@@ -25,24 +25,18 @@ export default function AboutPage() {
     <>
       <div>
         <div className="gap-3 relative inline-grid pt-3 pb-10 leading-[0] max-md:p-4">
-          <ImageSpan
-            width={708}
-            height={424}
-            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%272016%27%20height=%271208%27/%3e"
-            alt="Image Cover"
-            className="shadow-2"
-          >
+          <div className="shadow-2 rounded-xl">
             <Image
+              className="rounded-xl absolute inset-0 box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full"
               src={`${data?.abouts.image}`}
+              placeholder="blur"
+              blurDataURL={`${data?.abouts.image}`}
               width={708}
               height={424}
               alt="About Angga nurf"
-              blurDataURL={`${data?.abouts.blurDataUrl}`}
-              placeholder="blur"
-              className="rounded-xl absolute inset-0 box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full"
               unoptimized
             />
-          </ImageSpan>
+          </div>
 
           <h5 className="text-center pt-3 uppercase text-[12px] tracking-[2px] font-semibold text-gray-500 opacity-50 max-md:text-[11px] max-md:tracking-[-0.18px]">
             What&apos;s on my desk
@@ -110,37 +104,24 @@ export default function AboutPage() {
       </div>
       <div className="webkit-box-align-center items-center">
         <div className="grid-2 relative inline-grid gap-3 pt-3 pb-10 leading-[0] max-md:p-4">
-          <ImageSpan
-            width={348}
-            height={221}
-            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27616%27%20height=%27392%27/%3e"
-            alt="Image Cover"
-            className="shadow-2"
-          >
+          <div className="shadow-2 rounded-xl">
             <Image
               src={tweetImage2}
               alt="Tweet from @kristina"
-              blurDataURL="data:image/jpeg;base64,/9j/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAFAAgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAZEAADAQEBAAAAAAAAAAAAAAAAAQISA0H/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/8QAFBEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEQMRAD8ArXCaTxN5mfEgAB//2Q=="
+              blurDataURL={`${tweetImage2}`}
               placeholder="blur"
               className="rounded-xl absolute inset-0 box-border p-0 border-none m-auto block min-w-full max-w-full min-h-full max-h-full"
             />
-          </ImageSpan>
-
-          <ImageSpan
-            width={348}
-            height={221}
-            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27616%27%20height=%27392%27/%3e"
-            alt="Image Cover"
-            className="shadow-2"
-          >
+          </div>
+          <div className="shadow-2 rounded-xl">
             <Image
               src={tweetImage1}
               alt="Tweet from @Erick"
-              blurDataURL="data:image/jpeg;base64,/9j/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAFAAgDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAaEAADAQADAAAAAAAAAAAAAAAAAQIDBBJS/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AK3x8nmpUX1jypAAH//Z"
+              blurDataURL={`${tweetImage1}`}
               placeholder="blur"
               className="rounded-xl absolute inset-0 box-border p-0 border-none m-auto block min-w-full max-w-full min-h-full max-h-full"
             />
-          </ImageSpan>
+          </div>
         </div>
       </div>
       <Companies />
@@ -149,20 +130,13 @@ export default function AboutPage() {
           className="h-[120px] w-[120px] relative rounded-[50%]"
           style={{ boxShadow: "rgba(255, 0, 0, 0.5) 0px 21px 24px -14px" }}
         >
-          <ImageSpan
-            width={348}
-            height={221}
-            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27300%27%20height=%27300%27/%3e"
-            alt="Image Cover"
-          >
-            <Image
-              src={anggaImage}
-              alt="Angga nurfaisal Icon"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAMAAADz0U65AAAAOVBMVEUDAwNiYmLZ2dkxMTG/v78lJSWvr6////8SEhLn5+f39/empqadnZ14eHiCgoKAgICGhoZAQEA+Pj7/S0QeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAPElEQVR4nBXGQRKAIAwEwQESNgEU9f+PtehTI2UpJiGt9bR6MjP9HSin9S8Mqdr2lox+94ZXLqIEOEFw/EDgAZEe95RrAAAAAElFTkSuQmCC"
-              placeholder="blur"
-              className="rounded-full absolute inset-0 box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full"
-            />
-          </ImageSpan>
+          <Image
+            src={anggaImage}
+            alt="Angga nurfaisal Icon"
+            blurDataURL={`${anggaImage}`}
+            placeholder="blur"
+            className="rounded-full absolute inset-0 box-border p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full"
+          />
         </div>
         <Image
           src={loveImage}

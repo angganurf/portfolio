@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useTheme } from "next-themes";
 import { Works } from "@prisma/client";
 import useSWR from "swr";
@@ -37,24 +37,14 @@ export default function WorksPage() {
           >
             <div className="w-full relative rounded-xl max-md:!w-24">
               <span className="rounded-xl max-md:!w-24">
-                <span className="rounded-xl max-md:!w-24">
-                  <Image
-                    width={200}
-                    height={200}
-                    alt="Gradient BG"
-                    src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27400%27%20height=%27400%27/%3e"
-                    className="rounded-xl"
-                  />
-                </span>
                 <Image
                   src={`${item.thumbnail}`}
-                  width={100}
-                  height={100}
+                  width={200}
+                  height={200}
                   alt={`${item.name}`}
-                  blurDataURL={`${item.blurDataUrl}`}
+                  blurDataURL={`${item.thumbnail}`}
                   placeholder="blur"
-                  className="absolute inset-0 boxborder p-0 border-none m-auto block w-0 h-0 min-w-full max-w-full min-h-full max-h-full rounded-xl"
-                  unoptimized
+                  className="rounded-xl"
                 />
               </span>
               {item.tag ? (
@@ -73,6 +63,9 @@ export default function WorksPage() {
               <h3 className="text-base font-bold tracking-[-0.4px] webkit-box-align-center items-center flex mb-1 mx-0 max-md:mt-0 max-md:text-[15px] max-md:tracking-[-0.18px]">
                 {item.name}
               </h3>
+              <h4 className="text-[13px] font-medium leading-[120%] my-[2px] opacity-30 max-md:text-[12px]">
+                {item.year}
+              </h4>
               <p className="text-[15px] m-0 opacity-60 tracking-[-0.25px] font-normal leading-[140%] max-md:text-sm max-md:tracking-[-0.15px]">
                 {item.description}
               </p>

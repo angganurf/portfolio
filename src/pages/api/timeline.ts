@@ -14,10 +14,7 @@ export default async function handler(
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
   });
   if (req.method !== "POST") {
-    const { limit = 1 } = req.query;
-
     const timeline = await prisma.timeline.findMany({
-      take: Number(limit),
       orderBy: {
         id: "desc",
       },

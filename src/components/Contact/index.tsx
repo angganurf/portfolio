@@ -71,8 +71,9 @@ export default function Contact() {
           <ul className="flex">
             <li className="m-0">
               <Link
-                href=""
+                href="https://wa.me/6283818711916?text=Saying%20Hello"
                 className="rounded-[18px] flex webkit-box-align-center items-center font-medium text-base leading-[20px] relative design-pur hover:opacity-80 transition-all"
+                target="_blank"
               >
                 Send Design Proposal
               </Link>

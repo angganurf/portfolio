@@ -13,17 +13,14 @@ datasource db {
 
 model Pages {
   id          Int       @id @default(autoincrement())
-  title       String?   @db.VarChar(255)
-  description String?   @db.VarChar(255)
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  view_count  Int
+  slug        String?   @db.VarChar(255)
 }
 
 model Companies {
   id          Int       @id @default(autoincrement())
   name        String?   @db.VarChar(255)
   type        String?   @db.VarChar(255)       
-  url         String?   @db.VarChar(255)
   icon        String?   @db.VarChar(255)
 }
 
@@ -37,7 +34,6 @@ model Works {
   year        String?   @db.VarChar(255)
   thumbnail   String?   @db.VarChar(255)
   url         String?   @db.VarChar(255)
-  blurDataUrl String?   @db.Text
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt  
 }
@@ -49,7 +45,6 @@ model Timeline {
   StarterDate String?   @db.VarChar(255)
   tags        Tag[]
   image       String?   @db.VarChar(255)
-  blurDataUrl String?   @db.Text
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt  
 }
@@ -71,7 +66,6 @@ model About {
   about       String?   @db.Text
   current     String?   @db.Text
   image       String?   @db.VarChar(255)
-  blurDataUrl String?   @db.Text
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
 }
@@ -137,7 +131,6 @@ model Nft {
   tag         String?   @db.VarChar(255)
   date        String?   @db.VarChar(255)
   image       String?   @db.VarChar(255)
-  blurDataUrl String?   @db.Text  
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
 }
@@ -148,7 +141,6 @@ model Link {
   url         String?   @db.VarChar(255)
   type        String?   @db.VarChar(255)
   icon        String?   @db.VarChar(255)
-  blurDataUrl String?   @db.Text  
   on          Boolean   @default(false)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
@@ -164,7 +156,6 @@ model Stack {
   tag         String?   @db.VarChar(255)
   year        String?   @db.VarChar(255)
   icon        String?   @db.VarChar(255)
-  blurDataUrl String?   @db.Text  
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
 

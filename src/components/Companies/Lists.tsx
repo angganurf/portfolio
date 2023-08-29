@@ -11,7 +11,7 @@ export default function Lists() {
   const { systemTheme, theme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
   const { data, error } = useSWR<{ companie: Companies[] }>(
-    "/api/companies?limit=8",
+    "/api/companies?limit=13",
     fetcher
   );
   useEffect(() => {
